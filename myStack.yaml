@@ -1,9 +1,14 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: CloudFormation template for s3 bucket 
+Description: CloudFormation template for OIDC Provider Github
     
 Resources:
-  S3Bucket:
-    Type: AWS::S3::Bucket
-    Description: Creating Amazon S3 bucket from CloudFormation
+  GithubOidc:
+    Type: AWS::IAM::OIDCProvider
+    Condition: CreateOIDCProvider
     Properties:
-      BucketName: bucket-poc-oidc-actions
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList: 
+        - sts.amazonaws.com
+      ThumbprintList:
+        - 6938fd4d98bab03faadb97b34396831e3780aea1
+
