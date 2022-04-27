@@ -4,7 +4,6 @@ Description: CloudFormation template for OIDC Provider Github
 Resources:
   GithubOidc:
     Type: AWS::IAM::OIDCProvider
-    Condition: CreateOIDCProvider
     Properties:
       Url: https://token.actions.githubusercontent.com
       ClientIdList: 
