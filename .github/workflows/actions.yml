@@ -21,5 +21,3 @@ jobs:
         with:
           name: MyStack
           template: myStack.yaml
-          parameter-overrides: "MyParam1=myValue,MyParam2=${{ secrets.MY_SECRET_VALUE }}"
-
